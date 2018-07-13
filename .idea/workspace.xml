@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98107078-af0f-4521-8512-152946a677e1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/igindin/todolist/datamodel/TodoData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDoList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoList.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/igindin/todolist/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/igindin/todolist/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/igindin/todolist/mainwindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/igindin/todolist/mainwindow.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/igindin/todolist/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="577">
@@ -62,7 +52,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TodoData.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/igindin/todolist/datamodel/TodoData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#411#412#0" expanded="true" />
+                <element signature="e#461#462#0" expanded="true" />
+                <element signature="e#524#525#0" expanded="true" />
+                <element signature="e#556#557#0" expanded="true" />
+                <element signature="e#614#615#0" expanded="true" />
+                <element signature="e#656#657#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,6 +87,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/igindin/todolist/mainwindow.fxml" />
         <option value="$PROJECT_DIR$/src/com/igindin/todolist/Controller.java" />
+        <option value="$PROJECT_DIR$/src/com/igindin/todolist/datamodel/TodoData.java" />
       </list>
     </option>
   </component>
@@ -211,6 +227,14 @@
       <option name="presentableId" value="Default" />
       <updated>1531486314100</updated>
     </task>
+    <task id="LOCAL-00001" summary="date formatting">
+      <created>1531491306159</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1531491306159</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -229,7 +253,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -351,6 +375,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="577">
           <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/collections/FXCollections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="303" column="40" selection-start-line="303" selection-start-column="40" selection-end-line="303" selection-end-column="40" />
+          <folding>
+            <element signature="e#11614#11615#0" expanded="true" />
+            <element signature="e#11668#11669#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/igindin/todolist/datamodel/TodoData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
