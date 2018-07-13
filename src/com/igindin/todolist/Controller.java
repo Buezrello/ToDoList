@@ -1,13 +1,18 @@
 package com.igindin.todolist;
 
 import com.igindin.todolist.datamodel.TodoItem;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
 
+import javax.swing.text.DateFormatter;
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +24,8 @@ public class Controller {
     private ListView<TodoItem> todoListView;
     @FXML
     private TextArea itemDetailsTextArea;
+    @FXML
+    private Label deadlineLabel;
 
     public void initialize() {
         TodoItem item1 = new TodoItem("Mail birthday card", "Buy a 30th birthday card for John",
@@ -39,18 +46,29 @@ public class Controller {
         todoItems.add(item4);
         todoItems.add(item5);
 
+        todoListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                itemDetailsTextArea.setText(newValue.getDetails());
+                DateTimeFormatter df = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+                deadlineLabel.setText(df.format(newValue.getDeadline()));
+            }
+        });
+
         todoListView.getItems().setAll(todoItems);
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        todoListView.getSelectionModel().selectFirst();
     }
 
-    @FXML
-    public void handleClickListView() {
-        TodoItem item = todoListView.getSelectionModel().getSelectedItem();
-//        System.out.println("Selected item is " + item);
-        StringBuilder sb = new StringBuilder(item.getDetails());
-        sb.append("\n\n\n\n");
-        sb.append("Due: ");
-        sb.append(item.getDeadline().toString());
-        itemDetailsTextArea.setText(sb.toString());
-    }
+//    @FXML
+//    public void handleClickListView() {
+//        TodoItem item = todoListView.getSelectionModel().getSelectedItem();
+//        itemDetailsTextArea.setText(item.getDetails());
+//        deadlineLabel.setText(item.getDeadline().toString());
+////        System.out.println("Selected item is " + item);
+////        StringBuilder sb = new StringBuilder(item.getDetails());
+////        sb.append("\n\n\n\n");
+////        sb.append("Due: ");
+////        sb.append(item.getDeadline().toString());
+////        itemDetailsTextArea.setText(sb.toString());
+//    }
 }
