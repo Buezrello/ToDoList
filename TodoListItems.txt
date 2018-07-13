@@ -3,3 +3,6 @@ Doctor appointment	See dr. Smith next month	23-08-2018
 Finish design	I promised to do it next week	24-07-2018
 Pick up friend at the train station	Did I missed it already?	26-06-2018
 Pick up dry cleaning	Don't forget it - AGAIN!!!!	27-07-2018
+My new item	description of My New Item	29-07-2018
+dfgdfgdg	gjhg jhgjhgj	07-07-2018
+another item	long description	01-01-2019
