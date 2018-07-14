@@ -22,7 +22,6 @@
     </top>
     <left>
         <ListView fx:id="todoListView">
-
         </ListView>
     </left>
     <center>
