@@ -2,34 +2,31 @@ package com.igindin.todolist;
 
 import com.igindin.todolist.datamodel.TodoData;
 import com.igindin.todolist.datamodel.TodoItem;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import javafx.application.Platform;
+import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 
-import javax.security.auth.callback.Callback;
-import javax.swing.text.DateFormatter;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class Controller {
 
     private List<TodoItem> todoItems;
+    private FilteredList<TodoItem> filteredList;
+    private Predicate<TodoItem> wantAllItems;
+    private Predicate<TodoItem> wantTodaysItems;
 
     @FXML
     private ListView<TodoItem> todoListView;
@@ -48,6 +45,7 @@ public class Controller {
 
     @FXML
     private ToggleButton filterToggleButton;
+
 
     public void initialize() {
 
@@ -69,7 +67,12 @@ public class Controller {
             }
         });
 
-        SortedList<TodoItem> sortedList = new SortedList<>(TodoData.getInstance().getTodoItems(),
+        wantAllItems = todoItem -> true;
+        wantTodaysItems = todoItem -> (todoItem.getDeadline().equals(LocalDate.now()));
+
+        filteredList = new FilteredList<>(TodoData.getInstance().getTodoItems(), wantAllItems);
+
+        SortedList<TodoItem> sortedList = new SortedList<>(filteredList,
                 Comparator.comparing(TodoItem::getDeadline));
 
 //        todoListView.setItems(TodoData.getInstance().getTodoItems());
@@ -174,12 +177,27 @@ public class Controller {
     }
 
     @FXML
-    public void handleFilterButton(ActionEvent actionEvent) {
+    public void handleFilterButton() {
+        TodoItem selectedItem = todoListView.getSelectionModel().getSelectedItem();
         if (filterToggleButton.isSelected()) {
-
+            filteredList.setPredicate(wantTodaysItems);
+            if (filteredList.isEmpty()) {
+                itemDetailsTextArea.clear();
+                deadlineLabel.setText("");
+            } else if (filteredList.contains(selectedItem)) {
+                todoListView.getSelectionModel().select(selectedItem);
+            } else {
+                todoListView.getSelectionModel().selectFirst();
+            }
         } else {
-
+            filteredList.setPredicate(wantAllItems);
+            todoListView.getSelectionModel().select(selectedItem);
         }
+    }
+
+    @FXML
+    public void handleExit() {
+        Platform.exit();
     }
 }
 
