@@ -80,12 +80,12 @@ public class Controller {
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         todoListView.getSelectionModel().selectFirst();
 
-        todoListView.setCellFactory(new javafx.util.Callback<>() {
+        todoListView.setCellFactory(new javafx.util.Callback<ListView<TodoItem>, ListCell<TodoItem>>() {
 
             @Override
             public ListCell<TodoItem> call(ListView<TodoItem> param) {
 
-                ListCell<TodoItem> cell = new ListCell<>() {
+                ListCell<TodoItem> cell = new ListCell<TodoItem>() {
                     @Override
                     protected void updateItem(TodoItem item, boolean empty) {
                         super.updateItem(item, empty);
